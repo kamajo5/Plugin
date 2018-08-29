@@ -1,0 +1,32 @@
+﻿<Window x:Class="plugin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:plugin"
+        xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid x:Name="maingrid">
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top">
+                <Menu>
+                    <MenuItem Header="FIle">
+                        <MenuItem Header="Wczytaj obraz" Click="Wczytaj_obraz"/>
+                        <MenuItem Header="Zapisz obraz" Click="Zapisz_obraz"/>
+                        <Separator/>
+                        <MenuItem Header="Zamknij" Click="Koniec"/>
+                    </MenuItem>
+                    <MenuItem Header="Options" Name="opcje"  />
+                    <MenuItem Header="Help">
+                        <MenuItem Header="Wczytaj pluginy" Click="Check_plugin"/>
+                        <MenuItem Header="INFO" Click="INFO"/>
+                    </MenuItem>
+                </Menu>
+            </StackPanel>
+        </DockPanel>
+        <WindowsFormsHost Margin="30" DockPanel.Dock="Top">
+            <forms:PictureBox SizeMode="Zoom" x:Name="mainPictureBox"/>
+        </WindowsFormsHost>
+    </Grid>
+</Window>
